@@ -1,12 +1,12 @@
 package com.channiththuon.Mini.Project.exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.http.HttpStatus;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 @Data
 @AllArgsConstructor
-public class ErrorRespone {
+public class ErrorResponse {
     private HttpStatus status;
-    private String message;
+    private String messageString;
 }

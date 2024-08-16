@@ -1,11 +1,11 @@
 package com.channiththuon.Mini.Project.exception;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ApiException extends RuntimeException {
     private final HttpStatus status;
     private final String message;

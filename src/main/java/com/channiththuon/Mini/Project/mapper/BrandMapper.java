@@ -1,12 +1,14 @@
 package com.channiththuon.Mini.Project.mapper;
 
-import com.channiththuon.Mini.Project.dto.BrandDTO;
 import com.channiththuon.Mini.Project.entity.Brand;
+import com.channiththuon.Mini.Project.request.BrandRequest;
+import com.channiththuon.Mini.Project.respone.BrandResponse;
+import org.mapstruct.Mapper;
 
-public class BrandMapper {
-    public static Brand toBrand(BrandDTO dto) {
-        Brand brand = new Brand();
-        brand.setName(dto.getName());
-        return brand;
-    }
+@Mapper(componentModel = "spring")
+public interface BrandMapper {
+	
+	 Brand toEntity(BrandRequest request);
+
+	 BrandResponse toDTO(Brand entity);
 }

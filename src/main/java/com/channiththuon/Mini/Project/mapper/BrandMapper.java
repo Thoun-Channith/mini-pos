@@ -1,8 +1,8 @@
 package com.channiththuon.Mini.Project.mapper;
 
-import com.channiththuon.Mini.Project.entity.Brand;
-import com.channiththuon.Mini.Project.request.BrandRequest;
-import com.channiththuon.Mini.Project.respone.BrandResponse;
+import com.channiththuon.Mini.Project.models.entity.Brand;
+import com.channiththuon.Mini.Project.models.request.BrandRequest;
+import com.channiththuon.Mini.Project.models.response.BrandResponse;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

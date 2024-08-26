@@ -1,4 +1,4 @@
-package com.channiththuon.Mini.Project.request;
+package com.channiththuon.Mini.Project.models.request;
 
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;

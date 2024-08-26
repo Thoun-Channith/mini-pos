@@ -1,4 +1,4 @@
-package com.channiththuon.Mini.Project.respone;
+package com.channiththuon.Mini.Project.models.response;
 
 import lombok.Data;
 

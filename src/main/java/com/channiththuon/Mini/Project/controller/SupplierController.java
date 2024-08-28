@@ -62,6 +62,7 @@ public class SupplierController {
     public ResponseEntity<?> getWithPagination(Map<String, String> params) {
         Page<SupplierResponse> withPagination = supplierService.getWithPagination(params);
         PageDTO pageDTO = new PageDTO(withPagination);
+        System.out.println("Hello");
         return ResponseEntity.ok(pageDTO);
     }
 }

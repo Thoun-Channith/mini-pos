@@ -1,15 +1,18 @@
 package com.channiththuon.Mini.Project.controller;
 
+import com.channiththuon.Mini.Project.models.dto.PageDTO;
 import com.channiththuon.Mini.Project.models.entity.Company;
 import com.channiththuon.Mini.Project.mapper.CompanyMapper;
 import com.channiththuon.Mini.Project.models.request.CompanyRequest;
 import com.channiththuon.Mini.Project.models.response.CompanyResponse;
 import com.channiththuon.Mini.Project.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("company")
@@ -53,5 +56,12 @@ public class CompanyController {
         Company deletedCompany = companyService.deleteById(id);
         CompanyResponse response = companyMapper.toDTO(deletedCompany);
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("pagination")
+    public ResponseEntity<?> getWithPagination(Map<String, String> params) {
+        Page<CompanyResponse> withPagination = companyService.getWithPagination(params);
+        PageDTO pageDTO = new PageDTO(withPagination);
+        return ResponseEntity.ok(pageDTO);
     }
 }

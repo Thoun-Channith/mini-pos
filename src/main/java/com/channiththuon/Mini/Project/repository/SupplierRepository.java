@@ -1,6 +1,8 @@
 package com.channiththuon.Mini.Project.repository;
 
 import com.channiththuon.Mini.Project.models.entity.Supplier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +15,6 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
     Optional<Supplier> findByIdAndIsDeletedFalse(Long id);
 
     List<Supplier> findAllByIsDeletedFalse();
+
+    Page<Supplier> findAllByIsDeletedFalse(Pageable pageable);
 }

@@ -63,9 +63,10 @@ public class BrandController {
     }
 
     @GetMapping("pagination")
-    public ResponseEntity<?> getWithPagination(Map<String, String> params){
+    public ResponseEntity<?> getWithPagination(Map<String, String> params) {
         Page<BrandResponse> withPagination = brandService.getWithPagination(params);
         PageDTO pageDTO = new PageDTO(withPagination);
         return ResponseEntity.ok(pageDTO);
     }
+
 }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface GeneralSettingRepository extends JpaRepository<GeneralSetting, Long> {
     Optional<GeneralSetting> findByIdAndIsDeletedFalse(Long id);
     List<GeneralSetting> findAllByIsDeletedFalse();
+
 }

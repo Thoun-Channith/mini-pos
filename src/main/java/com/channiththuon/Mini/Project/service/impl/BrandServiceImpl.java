@@ -64,6 +64,7 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public Page<BrandResponse> getWithPagination(Map<String, String> params) {
+
         int pageLimit = PageUtil.DEFAULT_PAGE_LIMIT;
         if (params.containsKey(PageUtil.PAGE_LIMIT)) {
             pageLimit = Integer.parseInt(params.get(PageUtil.PAGE_LIMIT));
@@ -75,10 +76,7 @@ public class BrandServiceImpl implements BrandService {
         }
 
         Pageable pageable = PageUtil.getPageable(pageNumber, pageLimit);
-
         return brandRepository.findAllByIsDeletedFalse(pageable).map(itemBrandMapper::toDTO);
-
     }
-
 
 }

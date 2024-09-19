@@ -9,3 +9,5 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+app:
+  basePath: /src/main/java/com/channiththuon/Mini/Project/images
